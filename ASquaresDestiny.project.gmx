@@ -9,13 +9,19 @@
     <sprite>sprites\spr_cubix</sprite>
     <sprite>sprites\spr_block1</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_0</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_block1</object>
+    <object>objects\obj_level0</object>
+    <object>objects\obj_level0draw</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_level0</room>
     <room>rooms\rm_level1</room>
   </rooms>
   <help>
