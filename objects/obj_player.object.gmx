@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>grav = 0.2
+grav = global.tempgrav
 hsp = 0
 vsp = 0
 jumpspeed = 7

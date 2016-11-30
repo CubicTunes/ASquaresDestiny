@@ -8,9 +8,11 @@
   <sprites name="sprites">
     <sprite>sprites\spr_cubix</sprite>
     <sprite>sprites\spr_block1</sprite>
+    <sprite>sprites\spr_black</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_0</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -19,6 +21,7 @@
     <object>objects\obj_level0</object>
     <object>objects\obj_level0draw</object>
     <object>objects\obj_text</object>
+    <object>objects\obj_black</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_level0</room>
