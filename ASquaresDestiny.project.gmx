@@ -4,17 +4,40 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_void</sound>
+    <sound>sound\snd_music</sound>
+    <sound>sound\snd_roar</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_cubix</sprite>
+    <sprite>sprites\spr_boss_new</sprite>
+    <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\sprite7</sprite>
     <sprite>sprites\spr_block1</sprite>
     <sprite>sprites\spr_black</sprite>
+    <sprite>sprites\spr_lavaparticle</sprite>
+    <sprite>sprites\spr_lava</sprite>
+    <sprite>sprites\sprite11</sprite>
+    <sprite>sprites\spr_horn</sprite>
+    <sprite>sprites\spr_platform1</sprite>
+    <sprite>sprites\spr_platform2</sprite>
+    <sprite>sprites\sprite10</sprite>
+    <sprite>sprites\spr_firerain</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_0</background>
     <background>background\background1</background>
+    <background>background\bck_boss</background>
+    <background>background\background4</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\attacks.gml</script>
+    <script>scripts\scr_attack.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_block1</object>
@@ -22,6 +45,20 @@
     <object>objects\obj_level0draw</object>
     <object>objects\obj_text</object>
     <object>objects\obj_black</object>
+    <object>objects\obj_level1</object>
+    <object>objects\obj_lavaparticle</object>
+    <object>objects\obj_lava</object>
+    <object>objects\obj_boss</object>
+    <object>objects\obj_horn</object>
+    <object>objects\obj_controller</object>
+    <object>objects\obj_platform1</object>
+    <object>objects\obj_firerain</object>
+    <object>objects\obj_bossecho</object>
+    <object>objects\obj_hornecho</object>
+    <object>objects\obj_echoplayer</object>
+    <object>objects\obj_level1draw</object>
+    <object>objects\obj_fireball</object>
+    <object>objects\obj_platform2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_level0</room>

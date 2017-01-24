@@ -3,7 +3,7 @@
   <spriteName>spr_cubix</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,6 +32,10 @@ vsp = 0
 jumpspeed = 7
 movespeed = 4
 image_speed=0
+dash=false
+spd = 0
+last = "key_right"
+dashable=false
 </string>
           </argument>
         </arguments>
@@ -54,9 +58,22 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_right = keyboard_check(vk_right)
+            <string>if dash = false {
+key_right = keyboard_check(vk_right)
 key_left = -keyboard_check(vk_left)
 key_space = keyboard_check_pressed(vk_space)
+
+if place_free(x,y+1)=false {
+dashable=true
+}
+
+if keyboard_check(vk_right) {
+last = "key_right"
+}
+
+if keyboard_check(vk_left){
+last = "key_left"
+}
 
 move = key_left + key_right
 hsp = move * movespeed
@@ -79,6 +96,53 @@ if (place_free(x,y+vsp)=false) {
 }
 x+=hsp
 y+=vsp
+}
+if dash = false and dashable=true{
+if keyboard_check_pressed(vk_lshift) {
+    dashable=false
+    dash = true
+    spd = 18
+}
+}
+
+if last = "key_right"{
+if place_free(x+spd,y)=true{
+x+=spd
+}
+if place_meeting(x+spd,y,obj_horn){
+    chorn = instance_nearest(x+spd,y,obj_horn)
+    if chorn.image_blend!=c_white{
+        chorn.image_blend=c_white
+        chorn.solid=false
+    }
+}
+
+}
+if last = "key_left"{
+if place_free(x-spd,y)=true{
+x-=spd
+}
+
+if place_meeting(x-spd,y,obj_horn){
+    chorn = instance_nearest(x-spd,y,obj_horn)
+    if chorn.image_blend!=c_white{
+        chorn.image_blend=c_white
+        chorn.solid=false
+    }
+}
+
+}
+
+if spd != 0 {
+spd--
+instance_create(x,y,obj_echoplayer)
+    if spd = 0 {
+        vsp=0
+    }
+}
+if spd = 0 {
+dash = false
+}
 </string>
           </argument>
         </arguments>
