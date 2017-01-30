@@ -3,7 +3,7 @@
   <spriteName>spr_fireball</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -97,6 +97,7 @@ speed = 4+modifier
             <string>if instance_exists(obj_player)=false {
 instance_destroy()
 }
+if instance_exists(obj_player){
 if orbit = true {
 orbit_angle += orbit_speed
 if fireball = 1 {
@@ -116,6 +117,7 @@ x = obj_player.x + orbit_radius * cos(orbit_angle*-1 * pi / 360)
 y = obj_player.y - orbit_radius * sin(orbit_angle*-1 * pi / 360)
 }
 }
+}
 if orbit = false {
     if distance_to_point(targetx,targety) &lt;= 1 {
         effect_create_above(ef_ring,x,y,2,c_red)
@@ -123,9 +125,11 @@ if orbit = false {
     }
     if instance_exists(obj_player) {
     if place_meeting(x,y,obj_player) {
+    if obj_player.unkillable="false"{
         with(obj_player) {
         effect_create_above(ef_spark,x,y,2,c_black)
         instance_destroy()
+        }
         }
         effect_create_above(ef_ring,x,y,2,c_red)
         instance_destroy()

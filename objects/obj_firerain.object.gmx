@@ -27,9 +27,12 @@
             <kind>1</kind>
             <string>y+=10
 if place_meeting(x,y,obj_player) {
-with(obj_player){
-effect_create_above(ef_spark,x,y,2,c_black)
-instance_destroy()
+
+if obj_player.unkillable="false"{
+    with(obj_player){
+        effect_create_above(ef_spark,x,y,2,c_black)
+        instance_destroy()
+    }
 }
 effect_create_above(ef_flare,x,y+10,1.5,c_red)
 instance_destroy()

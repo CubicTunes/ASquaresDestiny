@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grav = 0.2
+            <string>unkillable="false"
+grav = 0.2
 grav = global.tempgrav
 hsp = 0
 vsp = 0
@@ -58,7 +59,14 @@ dashable=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if dash = false {
+            <string>if unkillable="false" {
+image_blend=c_white
+}
+if unkillable="true" {
+image_blend=c_purple
+}
+
+if dash = false {
 key_right = keyboard_check(vk_right)
 key_left = -keyboard_check(vk_left)
 key_space = keyboard_check_pressed(vk_space)

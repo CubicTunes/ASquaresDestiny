@@ -77,7 +77,18 @@ alarm[1]=global.fbchance
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room = rm_level1 {
+            <string>if keyboard_check_pressed(ord("G")){
+    variable = get_string("Variable","")
+    value = get_string("Value","")
+    if variable = "global.growthspeed" {
+        global.growthspeed=real(value)
+    }
+    if variable = "obj_player.unkillable"{
+        obj_player.unkillable=value
+    }
+}
+
+if room = rm_level1 {
 if keyboard_check_pressed(ord("R")) {
 room_restart()
 }
